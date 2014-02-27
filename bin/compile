@@ -7,7 +7,7 @@ if [ -d "$env_dir" ]; then
   then
     echo "found file"
     procfile=$(cat $env_dir/PROCFILE)
-    echo "Copying $BUILD_DIR/$procfile to $BUILD_DIR/.Procfile"
-    mv $BUILD_DIR/$procfile $BUILD_DIR/.Procfile
+    echo "Copying $BUILD_DIR/$procfile to $BUILD_DIR/Procfile"
+    mv $BUILD_DIR/$procfile $BUILD_DIR/Procfile
   fi
 fi
