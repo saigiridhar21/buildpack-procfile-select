@@ -1,12 +1,16 @@
 #!/usr/bin/env bash
-# bin/compile <build-dir> <cache-dir>
+# bin/compile BUILD_DIR CACHE_DIR ENV_DIR
 
-echo "-----> Checking for PROCFILE environment variable $env_dir/PROCFILE"
-if [ -d "$env_dir" ]; then
-  if [ -e "$env_dir/PROCFILE" ]
+BUILD_DIR=$1
+CACHE_DIR=$2
+ENV_DIR=$3
+
+echo "-----> Checking for PROCFILE environment variable $ENV_DIR/PROCFILE"
+if [ -d "$ENV_DIR" ]; then
+  if [ -e "$ENV_DIR/PROCFILE" ]
   then
     echo "found file"
-    procfile=$(cat $env_dir/PROCFILE)
+    procfile=$(cat $ENV_DIR/PROCFILE)
     echo "Copying $BUILD_DIR/$procfile to $BUILD_DIR/Procfile"
     mv $BUILD_DIR/$procfile $BUILD_DIR/Procfile
   fi
