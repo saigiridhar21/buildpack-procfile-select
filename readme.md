@@ -1,12 +1,14 @@
-# Heroku Buildpack: Environment-specific Procfiles
+# Heroku Buildpack: Procfile Select
 
 Because sometimes you just want to run different configurations of the same app on Heroku.
+See [buildpack-procfile-select-test](https://github.com/jessefulton/buildpack-procfile-select-test)
+for an example.
 
 ## Usage
 You almost definitely want to use this as part of a
-[multi-buildpack](https://github.com/ddollar/heroku-buildpack-multi)
+[multi-buildpack](https://github.com/ddollar/heroku-buildpack-multi).
 
-This buildpack must come before you're actual environment buildpack (when the process starts).
+This buildpack must come before your actual environment buildpack (when the process starts).
 A sample node.js `.buildpack` file may look like:
 ```
 https://github.com/jessefulton/env-procfile-buildpack.git
