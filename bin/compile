@@ -7,7 +7,7 @@ ENV_DIR=$3
 
 echo "-----> Checking for PROCFILE environment variable $ENV_DIR/PROCFILE"
 if [ -d "$ENV_DIR" ]; then
-  if [ -e "$ENV_DIR/PROCFILE" ]
+  if [ -e "$ENV_DIR/PROCFILE" ] && [ "$ENV_DIR/PROCFILE" != "Procfile" ]
   then
     echo "found file"
     procfile=$(cat $ENV_DIR/PROCFILE)
