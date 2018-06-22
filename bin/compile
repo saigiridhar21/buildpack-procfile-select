@@ -2,19 +2,11 @@
 # bin/compile BUILD_DIR CACHE_DIR ENV_DIR
 
 BUILD_DIR=$1
-CACHE_DIR=$2
-ENV_DIR=$3
 
-echo "-----> Checking for PROCFILE environment variable $ENV_DIR/PROCFILE"
-if [ -d "$ENV_DIR" ]; then
-  if [ -e "$ENV_DIR/PROCFILE" ]
-  then
-    echo "found file"
-    procfile=$(cat $ENV_DIR/PROCFILE)
-    if [ "$procfile" != "Procfile" ]
-    then
-      echo "Copying $BUILD_DIR/$procfile to $BUILD_DIR/Procfile"
-      mv -f $BUILD_DIR/$procfile $BUILD_DIR/Procfile
-    fi
-  fi
+echo "-----> Checking for Procfile.QA in $BUILD_DIR"
+if [ -e "$BUILD_DIR/PROCFILE" ]
+then
+  echo "Copying $BUILD_DIR/Procfile.QA to $BUILD_DIR/Procfile"
+  mv -f $BUILD_DIR/Procfile.QA $BUILD_DIR/Procfile
 fi
+
