@@ -4,7 +4,7 @@
 BUILD_DIR=$1
 
 echo "-----> Checking for Procfile.QA in $BUILD_DIR"
-if [ -e "$BUILD_DIR/PROCFILE" ]
+if [ -e "$BUILD_DIR/Procfile.QA" ]
 then
   echo "Copying $BUILD_DIR/Procfile.QA to $BUILD_DIR/Procfile"
   mv -f $BUILD_DIR/Procfile.QA $BUILD_DIR/Procfile
